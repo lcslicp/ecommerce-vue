@@ -1,27 +1,45 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App"/>
+  <section class="hero-section">
+    <Header />
+    <Hero />
+  </section>
+  <section class="about-section">
+    <ImageCard
+    altText="Minimalist living room sofa"
+    imgSrc="/minimalist-living.jpeg"
+    :imgCardTitle="imgCardTitle"
+    :imgCardText="imgCardText" />
+  </section>
+  
 </template>
 
 <script lang="ts">
-import { Options, Vue } from 'vue-class-component';
-import HelloWorld from './components/HelloWorld.vue';
+import Header from './components/Header.vue';
+import Hero from './components/Hero.vue'
+import ImageCard from './components/ImageCard.vue';
 
-@Options({
-  components: {
-    HelloWorld,
-  },
-})
-export default class App extends Vue {}
+export default {
+  name: 'App',
+  components: { Header, Hero, ImageCard },
+  data() {
+    return {
+      imgCardTitle: "Nurturing imagination to architectural elegance",
+      imgCardText: "Evolving from a shared passion for design excellence, our narrative revolves around the relentless pursuit of crafting extraordinary wall finishes."
+    }
+  }
+
+}
 </script>
 
 <style>
-#app {
+
+h1 {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
+
+/* headings: lexend deca
+body: mulish */
 </style>
