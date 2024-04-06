@@ -4,6 +4,7 @@
         <div>
             <h3>{{ imgCardTitle }}</h3>
             <p>{{ imgCardText }}</p>
+            <button>Learn More &#8641;</button>
         </div>
         
     </div>
@@ -55,5 +56,3 @@ img {
     width: 50%;
 }
 </style>
-
-<!-- notes april 3, 2024: fix alt text, study setup(), props, defineComponent and ref -->
