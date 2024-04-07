@@ -14,6 +14,9 @@
   <Services :images="servicesArray" />
   <IconsSection :subheadline="iconSubheadline" :sectionTitle="iconSectionTitle" :sectionText="iconSectionText" :items="iconItems" />
   <ImageBasedSection :sectionTitle="imgSectionTitle" :sectionText="imgSectionText"/>
+  <ProjectGallery :sectionTitle="galleryTitle" :imagesSetOne="setOne" :imagesSetTwo="setTwo" />
+  <CTA :sectionTitle="CTATitle"/>
+  <Footer :imgSrc="footerSrc" :altText="footerAlt" />
   
 </template>
 
@@ -24,10 +27,13 @@ import ImageCard from './components/ImageCard.vue';
 import Services from './components/Services.vue';
 import IconsSection from './components/IconsSection.vue'
 import ImageBasedSection from './components/ImageBasedSection.vue';
+import ProjectGallery from './components/ProjectGallery.vue';
+import CTA from './components/CTA.vue';
+import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
-  components: { Header, Hero, ImageCard, Services, ImageBasedSection, IconsSection },
+  components: { Header, Hero, ImageCard, Services, ImageBasedSection, IconsSection, ProjectGallery, CTA, Footer },
   data() {
     return {
       heroSubheadline: "Transforming Walls",
@@ -90,7 +96,46 @@ export default {
           iconAlt: "Proven Track Record",
           text: "Building on a legacy of trust, transforming spaces into timeless expressions of sophistication."
         },
-      ]
+      ],
+      galleryTitle: "Unveiling Exquisite and Inspiring Wall Creations",
+      setOne: [
+        {
+          src: "/gallery.jpg",
+          alt: "alt text",
+          projectTitle: "sample title",
+        },
+        {
+          src: "/gallery.jpg",
+          alt: "alt text",
+          projectTitle: "sample title",
+        },
+        {
+          src: "/gallery.jpg",
+          alt: "alt text",
+          projectTitle: "sample title",
+        }
+      ],
+      setTwo: [
+        {
+          src: "/gallery.jpg",
+          alt: "alt text",
+          projectTitle: "sample title",
+        },
+        {
+          src: "/gallery.jpg",
+          alt: "alt text",
+          projectTitle: "sample title",
+        },
+        {
+          src: "/gallery.jpg",
+          alt: "alt text",
+          projectTitle: "sample title",
+        }
+      ],
+
+      CTATitle: "Begin Your Wall Transformation Journey",
+      footerSrc: "logo.svg",
+      footerAlt: "Company Logo"
     }
   }
 
