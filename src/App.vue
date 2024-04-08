@@ -1,7 +1,8 @@
 <template>
-  <section class="hero-section">
-    <Header />
+  <section class="header-section">
+    <Header :imgSrc="logo"/>
     <Hero :subheadline="heroSubheadline" :sectionTitle="heroTitle" :sectionText="heroText" />
+    <button class="scroll">v</button>
   </section>
   <section class="about-section">
     <ImageCard
@@ -16,7 +17,7 @@
   <ImageBasedSection :sectionTitle="imgSectionTitle" :sectionText="imgSectionText"/>
   <ProjectGallery :sectionTitle="galleryTitle" :imagesSetOne="setOne" :imagesSetTwo="setTwo" />
   <CTA :sectionTitle="CTATitle"/>
-  <Footer :imgSrc="footerSrc" :altText="footerAlt" />
+  <Footer :imgSrc="logo" :altText="footerAlt" />
   
 </template>
 
@@ -36,6 +37,7 @@ export default {
   components: { Header, Hero, ImageCard, Services, ImageBasedSection, IconsSection, ProjectGallery, CTA, Footer },
   data() {
     return {
+      logo: "/logoipsum-logo.svg",
       heroSubheadline: "Transforming Walls",
       heroTitle: "Innovative Wall Finishes",
       heroText: "Elevate your space with our exceptional wall finishings & explore a new dimension of interior design.",
@@ -134,7 +136,6 @@ export default {
       ],
 
       CTATitle: "Begin Your Wall Transformation Journey",
-      footerSrc: "logo.svg",
       footerAlt: "Company Logo"
     }
   }
@@ -143,14 +144,98 @@ export default {
 </script>
 
 <style>
-
+:root {
+  --black: #181317;
+  --borwn: #61544a;
+  --biege: #ddd4cf;
+  --dark-gray: #282a2d;
+  --gray: #a4a4a2;
+  --light-gray: #f3f3f2;
+  --white: #ffffff;
+}
+body {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+h1, h2, h3 {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 600;
+}
+h4, .subheadline, li, p, button  {
+  font-family: "Mulish", sans-serif;
+}
+p {
+  font-size: 0.8em;
+  line-height: 1.5em;
+}
 h1 {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 40%;
+}
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+header, .footer-upper, .scroll {
+  margin: 0 auto;
+}
+header, .footer-upper {
+  max-width: 1440px;
+  width: 90%;
+}
+.hero-section, .about-section, .services-section, .icon-section, .imgSection, .project-section, .CTA-section {
+  width: 75%;
+  margin: auto;
+  border: 1px solid blue;
+}
+.btn-light {
+  background-color: var(--white);
+}
+.btn-dark {
+  background-color: var(--black);
+  color: var(--white);
+}
+.btn-beige {
+  background-color: var(--biege);
+}
+button {
+  border: none;
+  padding: 0.7em 2em;
+}
+.flex-col, .flex-row {
+  display: flex;
+}
+.flex-col {
+  flex-direction: column;
+}
+.flex-row {
+  flex-direction: row;
+}
+.header-section {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--black);
+  min-height: 95vh;
+  color: var(--white);
+  justify-content: center;
+  /* justify-content: space-around; */
+  align-items: flex-start;
+  align-content: space-around;
+  border: 1px solid blue;
+}
+.subheadline {
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--gray);
+  font-size: 0.8em;
+}
+.headline {
+  font-size: 3em;
+}
+.scroll {
+  align-self: flex-start;
 }
 
-/* headings: lexend deca
-body: mulish */
 </style>

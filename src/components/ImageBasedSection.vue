@@ -1,8 +1,10 @@
 <template>
-    <section>
-        <h3>{{ sectionTitle }}</h3>
-        <button>Learn More</button>
-
+    <section class="imgSection flex-row">
+        <div>
+            <h3>{{ sectionTitle }}</h3>
+            <button class="btn-light">Learn More</button>
+        </div>
+        
         <p>{{ sectionText }}</p>
 
     </section>

@@ -1,9 +1,11 @@
 <template>
-    <section>
-        <h1><span>{{ subheadline }}</span>
-            {{ sectionTitle }}</h1>
-            <p>{{ sectionText }}</p>
-            <button>Learn More &#8641;</button>
+    <section class="hero-section">
+        <h1>
+            <span class="subheadline">{{ subheadline }}</span> <br />
+            <span class="headline">{{ sectionTitle }}</span>
+        </h1>
+        <p>{{ sectionText }}</p>
+        <button class="btn-light">Learn More &#8641;</button>
     </section>
 </template>
 
@@ -38,3 +40,21 @@ export default defineComponent({
     }
 })
 </script>
+
+<style scoped>
+.hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    row-gap: 0.8em;
+}
+h1 {
+    margin: 0;
+}
+
+.hero-section > p {
+  width: 26%;
+}
+
+</style>

@@ -1,9 +1,10 @@
 <template>
-    <section>
-        <div><h2><span>{{ subheadline }}</span> <br />
+    <section class="icon-section flex-row">
+        <div>
+            <h2><span class="subheadline">{{ subheadline }}</span> <br />
         {{ sectionTitle }}</h2>
         <p>{{ sectionText }}</p>
-        <button>Learn More</button>
+        <button class="btn-dark">Learn More</button>
         </div>
         <div v-for="(item, index) in items" :key="index">
             <h3>{{ item.title }}</h3>

@@ -1,10 +1,10 @@
 <template>
-    <div>
+    <div class="flex-row">
         <img :src="imgSrc" :alt="altText">
         <div>
             <h3>{{ imgCardTitle }}</h3>
             <p>{{ imgCardText }}</p>
-            <button>Learn More &#8641;</button>
+            <button class="btn-dark">Learn More &#8641;</button>
         </div>
         
     </div>

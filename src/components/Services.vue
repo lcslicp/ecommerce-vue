@@ -1,13 +1,13 @@
 <template>
-    <section>
-        <h2><span>Services</span> <br />
+    <section class="services-section">
+        <h2><span class="subheadline">Services</span> <br />
         <span>Elevating spaces</span> with comprehensive wall finishings
         </h2>
 
-        <div>
-            <div v-for="(image, index ) in images" :key="index">
+        <div class="flex-row">
+            <div v-for="(image, index ) in images" :key="index" class="flex-col">
             <img :src="requireImage(image.src)" :alt="image.alt">
-            <button>{{ image.btnText }}  &#8641;</button>
+            <button class="btn-beige">{{ image.btnText }}  &#8641;</button>
             </div>
         </div>
     </section>
@@ -44,6 +44,6 @@ export default defineComponent({
 
 <style scoped>
 img {
-    width: 20%;
+    width: 80%;
 }
 </style>

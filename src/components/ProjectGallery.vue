@@ -1,6 +1,6 @@
 <template>
-    <section>
-        <h2><span>Projects</span> <br />
+    <section class="project-section">
+        <h2><span class="subheadline">Projects</span> <br />
         {{ sectionTitle }}</h2>
         <div>
             <div v-for="(image, index) in imagesSetOne" :key="index">

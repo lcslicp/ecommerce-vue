@@ -1,6 +1,6 @@
 <template>
 <footer>
-    <div>
+    <div class="footer-upper flex-row">
         <img :src="imgSrc" :alt="altText">
         <ul>
             <li><h5>Quick Links</h5></li>
@@ -18,7 +18,7 @@
             <li>Privacy Policy</li>
         </ul>
     </div>
-    <div>
+    <div class="footer-lower">
         <p>ArtistryWalls Inc.&copy; {{ currentYear }}</p>
     </div>
 </footer>
@@ -39,7 +39,7 @@ export default defineComponent({
         }
     },
     setup(props) {
-        const imgSrc = props.imgSrc;
+        const imgSrc = require(`@/assets${props.imgSrc}`);
         const altText = props.altText;
         const currentYear = new Date().getFullYear();
 
@@ -51,3 +51,14 @@ export default defineComponent({
     }
 })
 </script>
+
+<style>
+footer {
+    background-color: var(--dark-gray);
+    color: var(--white);
+}
+
+.footer-lower {
+    text-align: center;
+}
+</style>

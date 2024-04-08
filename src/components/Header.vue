@@ -1,6 +1,6 @@
 <template>
   <header>
-    <img src="" alt="company logo">
+    <img :src="imgSrc" alt="company logo">
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/">About Us</a></li>
@@ -28,6 +28,25 @@ li {
   margin: 0 10px;
 }
 a {
-  color: #1c1c1c;
+  color: var(--white);
 }
 </style>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+
+export default defineComponent({
+  props: {
+    imgSrc: {
+      type: String,
+      required: true
+    },
+  },
+  setup(props) {
+    const imgSrc = require(`@/assets${props.imgSrc}`);
+    return {
+      imgSrc
+    }
+  }
+})
+</script>
