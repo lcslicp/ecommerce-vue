@@ -1,7 +1,7 @@
 <template>
     <section class="imgSection flex-row">
         <div>
-            <h3>{{ sectionTitle }}</h3>
+            <h2 class="section-headline">{{ sectionTitle }}</h2>
             <button class="btn-light">Learn More</button>
         </div>
         

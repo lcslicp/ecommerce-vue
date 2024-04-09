@@ -2,7 +2,7 @@
     <section class="icon-section flex-row">
         <div>
             <h2><span class="subheadline">{{ subheadline }}</span> <br />
-        {{ sectionTitle }}</h2>
+        <span class="section-headline">{{ sectionTitle }}</span></h2>
         <p>{{ sectionText }}</p>
         <button class="btn-dark">Learn More</button>
         </div>

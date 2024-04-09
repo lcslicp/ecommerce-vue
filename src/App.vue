@@ -5,11 +5,12 @@
     <button class="scroll">v</button>
   </section>
   <section class="about-section">
+    <TextOnly :subheadline="textOnlySubheadline" :sectionTitle="textOnlySectionTitle" :sectionText="textOnlySectionText"/>
     <ImageCard
     altText="Minimalist living room sofa"
     imgSrc="/minimalist-living.jpeg"
     :imgCardTitle="imgCardTitle"
-    :imgCardText="imgCardText" />
+    :imgCardText1="imgCardText1" :imgCardText2="imgCardText2" />
   </section>
 
   <Services :images="servicesArray" />
@@ -26,7 +27,8 @@ import Header from './components/Header.vue';
 import Hero from './components/Hero.vue'
 import ImageCard from './components/ImageCard.vue';
 import Services from './components/Services.vue';
-import IconsSection from './components/IconsSection.vue'
+import IconsSection from './components/IconsSection.vue';
+import TextOnly from './components/TextOnly.vue';
 import ImageBasedSection from './components/ImageBasedSection.vue';
 import ProjectGallery from './components/ProjectGallery.vue';
 import CTA from './components/CTA.vue';
@@ -34,34 +36,40 @@ import Footer from './components/Footer.vue';
 
 export default {
   name: 'App',
-  components: { Header, Hero, ImageCard, Services, ImageBasedSection, IconsSection, ProjectGallery, CTA, Footer },
+  components: { Header, Hero, TextOnly, ImageCard, Services, ImageBasedSection, IconsSection, ProjectGallery, CTA, Footer },
   data() {
     return {
       logo: "/logoipsum-logo.svg",
       heroSubheadline: "Transforming Walls",
       heroTitle: "Innovative Wall Finishes",
       heroText: "Elevate your space with our exceptional wall finishings & explore a new dimension of interior design.",
+
+      textOnlySubheadline: "About Us",
+      textOnlySectionTitle: "Crafting Wall Finishings with Mastery",
+      textOnlySectionText: "Our commitment to excellence extends beyond the ordinary. With a deep passion for craftsmanship, each stroke and detail contribute to transforming walls into captivating works of art.",
+
       imgCardTitle: "Nurturing imagination to architectural elegance",
-      imgCardText: "Evolving from a shared passion for design excellence, our narrative revolves around the relentless pursuit of crafting extraordinary wall finishes.",
+      imgCardText1: "Evolving from a shared passion for design excellence, our narrative revolves around the relentless pursuit of crafting extraordinary wall finishes.",
+      imgCardText2: "Our story is a tapestry of creativity, precision, and a commitment to transforming your surroundings into breathtaking masterpieces.",
 
       servicesArray: [
         {
-          src: "/minimalist-living.jpeg",
+          src: "/service-img-01.jpeg",
           alt: "service 1",
           btnText: "Textured Wall Installations",
         },
         {
-          src: "/minimalist-living.jpeg",
+          src: "/service-img-02.jpeg",
           alt: "service 2",
           btnText: "Artisan Drywall Finishes",
         },
         {
-          src: "/minimalist-living.jpeg",
+          src: "/service-img-03.jpeg",
           alt: "service 3",
           btnText: "Custom Mural Creations",
         },
         {
-          src: "/minimalist-living.jpeg",
+          src: "/service-img-04.jpeg",
           alt: "service 4",
           btnText: "Plastering Solutions",
         },
@@ -158,6 +166,16 @@ body {
   margin: 0;
   padding: 0;
 }
+
+/* for debugging only */
+.red {
+  border: 1px solid red;
+}
+.blue {
+  border: 1px solid blue;
+}
+/* for debugging only */
+
 h1, h2, h3 {
   font-family: "Lexend Deca", sans-serif;
   font-weight: 600;
@@ -168,6 +186,7 @@ h4, .subheadline, li, p, button  {
 p {
   font-size: 0.8em;
   line-height: 1.5em;
+  opacity: 0.7;
 }
 h1 {
   width: 40%;
@@ -188,7 +207,6 @@ header, .footer-upper {
 .hero-section, .about-section, .services-section, .icon-section, .imgSection, .project-section, .CTA-section {
   width: 75%;
   margin: auto;
-  border: 1px solid blue;
 }
 .btn-light {
   background-color: var(--white);
@@ -220,19 +238,21 @@ button {
   min-height: 95vh;
   color: var(--white);
   justify-content: center;
-  /* justify-content: space-around; */
   align-items: flex-start;
   align-content: space-around;
-  border: 1px solid blue;
 }
 .subheadline {
   text-transform: uppercase;
   font-weight: 700;
   color: var(--gray);
-  font-size: 0.8em;
+  font-size: 16px;
 }
 .headline {
   font-size: 3em;
+}
+
+.section-headline {
+  font-size: 1.3em;
 }
 .scroll {
   align-self: flex-start;

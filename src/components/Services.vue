@@ -1,11 +1,11 @@
 <template>
-    <section class="services-section">
+    <section class="services-section container flex-col">
         <h2><span class="subheadline">Services</span> <br />
-        <span>Elevating spaces</span> with comprehensive wall finishings
+        <span class="section-headline"><span>Elevating spaces</span> with comprehensive wall finishings</span>
         </h2>
 
-        <div class="flex-row">
-            <div v-for="(image, index ) in images" :key="index" class="flex-col">
+        <div class="flex-row service-container">
+            <div v-for="(image, index ) in images" :key="index" class="flex-col service-item">
             <img :src="requireImage(image.src)" :alt="image.alt">
             <button class="btn-beige">{{ image.btnText }}  &#8641;</button>
             </div>
@@ -43,7 +43,26 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.container {
+    align-items: center;
+}
+h2 {
+    text-align: center;
+    width: 60%;
+    margin: 0;
+}
+.service-container, .service-item {
+    gap: 1.2em;
+    width: 100%;
+}
+.service-item {
+    align-items: center;
+}
+img, button {
+    width: 100%;
+}
 img {
-    width: 80%;
+    height: 30em;
+    object-fit: cover;
 }
 </style>

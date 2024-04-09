@@ -1,7 +1,7 @@
 <template>
     <section class="CTA-section flex-col">
         <h2><span>Contact Us</span><br />
-{{ sectionTitle }}</h2>
+        <span class="section-headline">{{ sectionTitle }}</span></h2>
 
     <form action="" class="flex-col">
         <input type="text" placeholder="Enter Full Name">
