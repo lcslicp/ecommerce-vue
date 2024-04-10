@@ -7,7 +7,10 @@
         <div class="flex-row service-container">
             <div v-for="(image, index ) in images" :key="index" class="flex-col service-item">
             <img :src="requireImage(image.src)" :alt="image.alt">
-            <button class="btn-beige">{{ image.btnText }}  &#8641;</button>
+            <button class="btn-biege flex-row">{{ image.btnText }} 
+                <svg width="5" height="12" viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 28.24L12.2133 16L0 3.76L3.76 0L19.76 16L3.76 32L0 28.24Z" fill="#181317"/></svg>
+            </button>
             </div>
         </div>
     </section>

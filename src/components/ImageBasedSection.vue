@@ -2,7 +2,8 @@
     <section class="imgSection flex-row">
         <div>
             <h2 class="section-headline">{{ sectionTitle }}</h2>
-            <button class="btn-light">Learn More</button>
+            <button class="btn-light">Learn More <svg width="5" height="12" viewBox="0 0 20 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 28.24L12.2133 16L0 3.76L3.76 0L19.76 16L3.76 32L0 28.24Z" fill="#181317"/></svg></button>
         </div>
         
         <p>{{ sectionText }}</p>

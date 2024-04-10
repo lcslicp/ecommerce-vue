@@ -84,25 +84,25 @@ export default {
       iconItems: [
         {
           title: "Innovative Designs",
-          icon: "/icon.svg",
+          icon: "/icon-01.svg",
           iconAlt: "Innovative Designs",
           text: "Pioneering creativity, our team delivers avant-garde designs that not only  captivate but redefine the very essence of your space, inspiring awe."
         },
         {
           title: "Quality Craftmanship",
-          icon: "/icon.svg",
+          icon: "/icon-02.svg",
           iconAlt: "Quality Craftmanship",
           text: "Crafting each finish, we go beyond the surface, ensuring that every detail reflects a commitment to creating an immersive experience."
         },
         {
           title: "Client-Centric Approach",
-          icon: "/icon.svg",
+          icon: "/icon-03.svg",
           iconAlt: "Client-Centric Approach",
           text: "Our approach is centered around you. We tailor solutions to your unique vision, engaging in a collaborative process."
         },
         {
           title: "Proven Track Record",
-          icon: "/icon.svg",
+          icon: "/icon-04.svg",
           iconAlt: "Proven Track Record",
           text: "Building on a legacy of trust, transforming spaces into timeless expressions of sophistication."
         },
@@ -201,8 +201,10 @@ header, .footer-upper, .scroll {
   margin: 0 auto;
 }
 header, .footer-upper {
-  max-width: 1440px;
   width: 90%;
+}
+header, .footer-upper, .hero-section, .about-section, .services-section, .icon-section, .imgSection, .project-section, .CTA-section {
+  max-width: 1440px;
 }
 .hero-section, .about-section, .services-section, .icon-section, .imgSection, .project-section, .CTA-section {
   width: 75%;
@@ -215,20 +217,24 @@ header, .footer-upper {
   background-color: var(--black);
   color: var(--white);
 }
-.btn-beige {
+.btn-biege {
   background-color: var(--biege);
 }
 button {
   border: none;
   padding: 0.7em 2em;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5em;
+  height: 3.5em;
 }
-.flex-col, .flex-row {
+.flex-col, .flex-row, button {
   display: flex;
 }
 .flex-col {
   flex-direction: column;
 }
-.flex-row {
+.flex-row, button {
   flex-direction: row;
 }
 .header-section {
@@ -245,7 +251,7 @@ button {
   text-transform: uppercase;
   font-weight: 700;
   color: var(--gray);
-  font-size: 16px;
+  font-size: 15px;
 }
 .headline {
   font-size: 3em;
