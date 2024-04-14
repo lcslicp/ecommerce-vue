@@ -9,7 +9,7 @@
 </svg>
 </a></li>
       <li><a href="/">Testimonials</a></li>
-      <li><button>Contact Us</button></li>
+      <li><button class="btn-light">Contact Us</button></li>
     </ul>
   </header>
 </template>

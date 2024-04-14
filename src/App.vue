@@ -2,7 +2,12 @@
   <section class="header-section">
     <Header :imgSrc="logo"/>
     <Hero :subheadline="heroSubheadline" :sectionTitle="heroTitle" :sectionText="heroText" />
-    <button class="scroll">v</button>
+    <div class="scroll-div">
+      <button class="scroll"><svg width="8" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M5 8L0.669873 0.499999L9.33013 0.5L5 8Z"/>
+</svg>
+</button>
+    </div>
   </section>
   <section class="about-section">
     <TextOnly :subheadline="textOnlySubheadline" :sectionTitle="textOnlySectionTitle" :sectionText="textOnlySectionText"/>
@@ -154,7 +159,7 @@ export default {
 <style>
 :root {
   --black: #181317;
-  --borwn: #61544a;
+  --brown: #61544a;
   --biege: #ddd4cf;
   --dark-gray: #282a2d;
   --gray: #a4a4a2;
@@ -180,7 +185,7 @@ h1, h2, h3 {
   font-family: "Lexend Deca", sans-serif;
   font-weight: 600;
 }
-h4, .subheadline, li, p, button  {
+h4, .subheadline, li, p, button, input, textarea  {
   font-family: "Mulish", sans-serif;
 }
 p {
@@ -196,21 +201,29 @@ li {
 }
 a {
   text-decoration: none;
+  font-weight: 100;
 }
-header, .footer-upper, .scroll {
-  margin: 0 auto;
+a:hover {
+  opacity: 0.5;
+  cursor: pointer;
 }
 header, .footer-upper {
+  margin: 0 auto;
+}
+header {
   width: 90%;
 }
-header, .footer-upper, .hero-section, .about-section, .services-section, .icon-section, .imgSection, .project-section, .CTA-section {
+header, .footer-upper, .hero-section, .about-section, .services-section, .icon-section, .img-section, .project-section, .CTA-section {
   max-width: 1440px;
 }
-.hero-section, .about-section, .services-section, .icon-section, .imgSection, .project-section, .CTA-section {
+.hero-section, .about-section, .services-section, .icon-section, .img-section, .project-section, .CTA-section, .footer-upper, .scroll-div {
   width: 75%;
   margin: auto;
 }
-.btn-light {
+.about-section {
+  padding: 6em 0 3em 0;
+}
+.btn-light, .scroll:hover {
   background-color: var(--white);
 }
 .btn-dark {
@@ -222,11 +235,46 @@ header, .footer-upper, .hero-section, .about-section, .services-section, .icon-s
 }
 button {
   border: none;
-  padding: 0.7em 2em;
+  padding: 0.5em 2em;
   justify-content: center;
   align-items: center;
   gap: 0.5em;
-  height: 3.5em;
+  height: 2.8em;
+  cursor: pointer;
+}
+.btn-light:hover, .scroll, .btn-dark:hover, .btn-biege:hover {
+  background-color: transparent;
+}
+.btn-light:hover, .scroll {
+  border: 1px solid var(--white);
+  color: var(--white);
+}
+.btn-light:hover svg path {
+  fill: var(--white);
+}
+.btn-dark:hover {
+  border: 1px solid var(--black);
+  color: var(--black)
+}
+.btn-dark:hover svg path {
+  fill: var(--black);
+}
+.btn-biege:hover {
+  border: 1px solid var(--brown);
+}
+.scroll {
+  margin: 0;
+  border-radius: 50%;
+  padding: 0.9em 1.1em;
+}
+.scroll:hover {
+  border: none;
+}
+.scroll svg path {
+  fill: var(--white);
+}
+.scroll:hover svg path {
+  fill: var(--black);
 }
 .flex-col, .flex-row, button {
   display: flex;
@@ -259,9 +307,6 @@ button {
 
 .section-headline {
   font-size: 1.3em;
-}
-.scroll {
-  align-self: flex-start;
 }
 
 </style>

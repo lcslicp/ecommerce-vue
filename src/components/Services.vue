@@ -48,6 +48,7 @@ export default defineComponent({
 <style scoped>
 .container {
     align-items: center;
+    padding: 3em 0 6em 0;
 }
 h2 {
     text-align: center;
