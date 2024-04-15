@@ -17,6 +17,7 @@
 
 <style scoped>
 header, ul {
+  z-index: 9;
   justify-content: space-between;
   align-items: center;
 }

@@ -1,7 +1,7 @@
 <template>
   <section class="header-section">
     <Header :imgSrc="logo"/>
-    <Hero :subheadline="heroSubheadline" :sectionTitle="heroTitle" :sectionText="heroText" />
+    <Hero :subheadline="heroSubheadline" :sectionTitle="heroTitle" :sectionText="heroText" :images="heroImages" />
     <div class="scroll-div">
       <button class="scroll"><svg width="8" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M5 8L0.669873 0.499999L9.33013 0.5L5 8Z"/>
@@ -22,7 +22,7 @@
   <IconsSection :subheadline="iconSubheadline" :sectionTitle="iconSectionTitle" :sectionText="iconSectionText" :items="iconItems" />
   <ImageBasedSection :sectionTitle="imgSectionTitle" :sectionText="imgSectionText"/>
   <ProjectGallery :sectionTitle="galleryTitle" :imagesSetOne="setOne" :imagesSetTwo="setTwo" />
-  <CTA :sectionTitle="CTATitle"/>
+  <CTA :sectionTitle="CTATitle" :images="CTAImages"/>
   <Footer :imgSrc="logo" :altText="footerAlt" />
   
 </template>
@@ -48,6 +48,20 @@ export default {
       heroSubheadline: "Transforming Walls",
       heroTitle: "Innovative Wall Finishes",
       heroText: "Elevate your space with our exceptional wall finishings & explore a new dimension of interior design.",
+      heroImages: [
+        {
+          src: "/hero-img-01.jpg",
+          alt: "",
+        },
+        {
+          src: "/hero-img-02.jpg",
+          alt: ""
+        },
+        {
+          src: "/hero-img-03.jpg",
+          alt: ""
+        },
+      ],
 
       textOnlySubheadline: "About Us",
       textOnlySectionTitle: "Crafting Wall Finishings with Mastery",
@@ -115,40 +129,64 @@ export default {
       galleryTitle: "Unveiling Exquisite and Inspiring Wall Creations",
       setOne: [
         {
-          src: "/gallery.jpg",
-          alt: "alt text",
-          projectTitle: "sample title",
+          src: "/proj-img-01.jpg",
+          alt: "Project One",
+          projectTitle: "Transforming Your Walls into Serenity",
         },
         {
-          src: "/gallery.jpg",
-          alt: "alt text",
-          projectTitle: "sample title",
+          src: "/proj-img-02.jpg",
+          alt: "Project Two",
+          projectTitle: "Redefining Hallways with Distinctive Brick Walls",
         },
         {
-          src: "/gallery.jpg",
-          alt: "alt text",
-          projectTitle: "sample title",
+          src: "/proj-img-03.jpg",
+          alt: "Project Three",
+          projectTitle: "Enhancing Bedroom Ambiance",
+        },
+        {
+          src: "/proj-img-04.jpg",
+          alt: "Project Four",
+          projectTitle: "Infusing Life into Your Room with Vibrant Teal Walls",
         }
       ],
       setTwo: [
         {
-          src: "/gallery.jpg",
-          alt: "alt text",
-          projectTitle: "sample title",
+          src: "/proj-img-05.jpg",
+          alt: "Project Five",
+          projectTitle: "Modern Wall Designs",
         },
         {
-          src: "/gallery.jpg",
-          alt: "alt text",
-          projectTitle: "sample title",
+          src: "/proj-img-06.jpg",
+          alt: "Project Six",
+          projectTitle: "Bathroom Walls with Minimalist Charm",
         },
         {
-          src: "/gallery.jpg",
-          alt: "alt text",
-          projectTitle: "sample title",
+          src: "/proj-img-07.jpg",
+          alt: "Project Seven",
+          projectTitle: "Stylish Storage Solutions",
+        },
+        {
+          src: "/proj-img-08.jpg",
+          alt: "Project Eight",
+          projectTitle: "Embracing Warmth and Character with Wooden Walls",
         }
       ],
 
       CTATitle: "Begin Your Wall Transformation Journey",
+      CTAImages: [
+        {
+          src: "/cta-img-01.jpg",
+          alt: ""
+        },
+        {
+          src: "/cta-img-02.jpg",
+          alt: ""
+        },
+        {
+          src: "/cta-img-03.jpg",
+          alt: ""
+        },
+      ],
       footerAlt: "Company Logo"
     }
   }
@@ -187,6 +225,9 @@ h1, h2, h3 {
 }
 h4, .subheadline, li, p, button, input, textarea  {
   font-family: "Mulish", sans-serif;
+}
+h2 {
+  padding-bottom: 1em;
 }
 p {
   font-size: 0.8em;
@@ -242,9 +283,13 @@ button {
   height: 2.8em;
   cursor: pointer;
 }
-.btn-light:hover, .scroll, .btn-dark:hover, .btn-biege:hover {
+.btn-light:hover, .scroll, .btn-dark:hover, .btn-biege:hover, .btn-link {
   background-color: transparent;
 }
+.btn-link {
+  padding: 0;
+}
+
 .btn-light:hover, .scroll {
   border: 1px solid var(--white);
   color: var(--white);

@@ -51,6 +51,6 @@ p {
 
 .container {
     align-items: center;
-    gap: 3em;
+    gap: 5em;
 }
 </style>

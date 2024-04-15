@@ -78,4 +78,7 @@ h3 {
     width: 40%;
     height: fit-content;
 }
+button {
+    margin-top: 2.5em;
+}
 </style>

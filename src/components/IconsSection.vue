@@ -74,7 +74,14 @@ export default defineComponent({
         margin: 0;
     }
     .main-text {
-        width: 70%;
+        width: 60%;
+        padding-right: 3em;
+    }
+    h3 {
+        padding-bottom: 0.8em;
+    }
+    p {
+        padding-bottom: 2.5em;
     }
     .icon-section {
         align-items: center;
@@ -95,9 +102,7 @@ export default defineComponent({
         gap: 2em;
         color: var(--white);
         background-color: var(--black);
-        padding: 6em 0;
-        padding-left: 4em;
-        padding-right: 25%;
+        padding: 6em 25% 6em 6em;
         margin-right: -25%;
     }
     .icon-item {

@@ -1,6 +1,6 @@
 <template>
-    <section class="CTA-container flex-col">
-        <div class="CTA-section">
+    <section class="CTA-container">
+        <div class="CTA-section flex-col">
             <h2><span class="subheadline">Contact Us</span><br />
             <span class="section-headline">{{ sectionTitle }}</span></h2>
 
@@ -11,6 +11,13 @@
             <button type="submit" class="btn-light">Submit</button>
             </form>
         </div>
+
+        <div class="CTA-bg flex-row">
+            <div v-for="(image, index) in images" :key="index" class="bg-item">
+                <img :src="requireImage(image.src)" :alt="image.alt">
+            </div>
+
+        </div>
         
     </section>
 
@@ -19,17 +26,28 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 
+interface CTABackground {
+    src: string,
+    alt: string
+}
+
 export default defineComponent({
     props: {
         sectionTitle: {
             type: String,
             required: true
-        }
+        },
+        images: Array as () => CTABackground[]
     },
     setup(props) {
         const sectionTitle = props.sectionTitle;
+        const requireImage = (src:string) => {
+            return require(`@/assets${src}`)
+        }
         return {
-            sectionTitle
+            sectionTitle,
+            requireImage,
+            images: props.images
         }
     }
 })
@@ -38,6 +56,8 @@ export default defineComponent({
 <style scoped>
 .CTA-container {
     background-color: var(--black);
+    height: fit-content;
+    position: relative;
 }
 .CTA-section {
     padding: 5em 0;
@@ -47,6 +67,7 @@ export default defineComponent({
 }
 h2, form {
     margin: 0;
+    z-index: 9;
 }
 h2 {
     width: 40%;
@@ -64,5 +85,22 @@ input, textarea {
 }
 button {
     margin-top: 1.5em;
+}
+.CTA-bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60%;
+    height: 100%;
+    opacity: 0.5;
+    filter: brightness(0.7);
+}
+.bg-item {
+    width: 35%;
+}
+.bg-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 </style>
