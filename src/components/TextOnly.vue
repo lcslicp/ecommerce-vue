@@ -1,5 +1,5 @@
 <template>
-    <div class="flex-row container">
+    <div class="container">
         <h2><span class="subheadline">{{ subheadline }}</span><br/>
         <span class="section-headline">{{ sectionTitle }}</span>
         </h2>
@@ -42,15 +42,51 @@ export default defineComponent({
 
 <style scoped>
 h2 {
-    min-width: 40%;
+    width: 100%;
 }
 p {
     margin: 0;
     height: 100%;
+    text-align: justify;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0;
 }
 
-.container {
-    align-items: center;
-    gap: 5em;
+/* portrait tablets, large phones  */
+@media screen and (min-width: 600px) {
+    h2 {
+    min-width: 40%;
 }
+    h2, p {
+        text-align: left;
+    }
+    .container {
+    flex-direction: row;
+    gap: 1.8em;
+    align-items: center;
+}
+}
+
+/* landscape tablets */
+@media screen and (min-width: 768px) {
+
+}
+
+/* laptops and desktops */
+@media screen and (min-width: 992px) {
+    h2 {
+        min-width: 50%;
+    }
+    .container {
+        gap: 2em;
+    }
+}
+
+/* large screens */
+@media screen and (min-width: 1200px) {
+  }
 </style>

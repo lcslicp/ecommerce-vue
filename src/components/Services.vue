@@ -52,21 +52,69 @@ export default defineComponent({
 }
 h2 {
     text-align: center;
-    width: 60%;
     margin: 0;
+    padding-bottom: 1.2em;
 }
-.service-container, .service-item {
-    gap: 1.2em;
+h2, .service-container, button, .service-item {
     width: 100%;
+}
+.service-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 3em;
 }
 .service-item {
-    align-items: center;
-}
-img, button {
-    width: 100%;
+    gap: 1.5em;
 }
 img {
     height: 30em;
     object-fit: cover;
 }
+
+/* portrait tablets, large phones  */
+@media screen and (min-width: 600px) {
+
+}
+
+/* landscape tablets */
+@media screen and (min-width: 768px) {
+    .service-container {
+        gap: 2em;
+    }
+    .service-item {
+        gap: 1em;
+    }
+    .service-item {
+        width: 45%;
+    }
+    img {
+    width: 100%;
+    height: 30em;
+    object-fit: cover;
+    }
+
+}
+
+/* laptops and desktops */
+@media screen and (min-width: 992px) {
+    h2 {
+        width: 60%;
+    }
+    .service-container, .service-item {
+        gap: 0.5em;
+    }
+    .service-container {
+        flex-wrap: nowrap;
+    }
+}
+
+/* large screens */
+@media screen and (min-width: 1200px) {
+    h2 {
+        width: 50%;
+    }
+    .service-container, .service-item {
+        gap: 1em;
+    }
+  }
 </style>

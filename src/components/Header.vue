@@ -1,7 +1,7 @@
 <template>
   <header class="flex-row">
     <img :src="imgSrc" alt="company logo">
-    <ul class="flex-row">
+    <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/">About Us</a></li>
       <li><a href="/">Services <svg width="15" height="7" viewBox="0 0 33 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -25,6 +25,8 @@ ul {
   list-style-type: none;
   padding: 0;
   width: 60%;
+  display: flex;
+  flex-direction: column;
 }
 li {
   margin: 0;
@@ -33,6 +35,25 @@ a {
   color: var(--white);
   font-size: 0.95em;
 }
+/* portrait tablets, large phones  */
+@media screen and (min-width: 600px) {
+
+}
+
+/* landscape tablets */
+@media screen and (min-width: 768px) {
+ 
+}
+
+/* laptops and desktops */
+@media screen and (min-width: 992px) {
+
+}
+
+/* large screens */
+@media screen and (min-width: 1200px) {
+
+  }
 </style>
 
 <script lang="ts">

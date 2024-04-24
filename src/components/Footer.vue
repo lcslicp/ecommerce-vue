@@ -1,6 +1,6 @@
 <template>
 <footer class="flex-col">
-    <div class="footer-upper flex-row">
+    <div class="footer-upper">
         <img :src="imgSrc" :alt="altText">
         <ul class="flex-col">
             <li><h5>Quick Links</h5></li>
@@ -58,10 +58,11 @@ footer {
     color: var(--white);
 }
 .footer-upper {
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 8em;
-    padding: 4em 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4em;
+    padding: 4em 2em;
 }
 .footer-lower {
     text-align: center;
@@ -69,7 +70,7 @@ footer {
     border-top: 0.5px solid var(--gray);
 }
 img {
-    width: 25%;
+    width: 50%;
 }
 h5 {
     text-transform: uppercase;
@@ -81,9 +82,54 @@ h5, ul, li {
 }
 a {
     color: var(--white);
-    font-size: 0.9em;
+}
+h5, a {
+    font-size: 1em;
 }
 ul {
-    gap: 0.4em;
+    gap: 1.2em;
+    text-align: center;
+}
+
+/* portrait tablets, large phones  */
+@media screen and (min-width: 600px) {
+
+}
+
+/* landscape tablets */
+@media screen and (min-width: 768px) {
+    .footer-upper {
+     flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 7em;
+    padding: 5em 0;
+    }
+    img {
+        width: 45%;
+    }
+    h5, a {
+        font-size: 0.9em;
+    }
+    ul {
+        text-align: left;
+    }
+}
+
+/* laptops and desktops */
+@media screen and (min-width: 992px) {
+    img {
+        width: 30%;
+    }
+    .footer-upper {
+        padding: 4em 0;
+    }
+}
+
+/* large screens */
+@media screen and (min-width: 1200px) {
+    .footer-upper {
+        gap: 8em;
+    }
 }
 </style>

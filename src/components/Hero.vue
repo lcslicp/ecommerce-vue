@@ -75,7 +75,7 @@ export default defineComponent({
     position: absolute;
     top: 0%;
     right: 0;
-    width: 70%;
+    width: 60%;
     opacity: 0.5;
     filter: brightness(0.7);
     z-index: 0;
@@ -91,15 +91,76 @@ export default defineComponent({
 }
 h1 {
     margin: 0;
-    padding-bottom: 0.6em;
+    padding-bottom: 0.3em;
 }
 .hero-section > p {
-  width: 22%;
+  width: 60%;
   margin: 0;
-  padding-bottom: 1.8em;
+  padding-bottom: 1.2em;
 }
 h1, p, button {
     z-index: 3;
+}
+h1 {
+    width: 80%;
+ } 
+.headline {
+  font-size: 2.2em;
+}
+
+/* portrait tablets, large phones  */
+@media screen and (min-width: 600px) {
+    .hero-bg {
+        width: 70%;
+    }
+    .headline {
+        font-size: 3em;
+    }
+}
+
+/* landscape tablets */
+@media screen and (min-width: 768px) {
+    h1 {
+        width: 70%;
+    }
+    .hero-bg {
+        width: 65%;
+    }  
+    .hero-section > p {
+        width: 45%;
+        padding-bottom: 1.3em;
+    }
+}
+
+/* laptops and desktops */
+@media screen and (min-width: 992px) {
+    .hero-bg {
+        width: 65%;
+    } 
+    h1 {
+        width: 45%;
+    } 
+    .headline {
+        font-size: 3em;
+    }
+    .hero-section > p {
+        width: 30%;
+    }
+}
+
+/* large screens */
+@media screen and (min-width: 1200px) {
+    .hero-bg {
+        width: 70%;
+    }
+    h1 {
+        width: 45%;
+    }
+    .hero-section > p {
+        width: 20%;
+        padding-bottom: 1.8em;
+    } 
+
 }
 
 </style>

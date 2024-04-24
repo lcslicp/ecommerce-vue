@@ -81,7 +81,8 @@ h2, h4, p, button {
 }
 h2 {
     text-align: center;
-    width: 40%;
+    width: 100%;
+    padding-bottom: 1em;
 }
 .gallery-container, .gallery-container-two {
     width: 100%;
@@ -158,5 +159,32 @@ h4 {
     background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(255,255,255,0) 100%);
     mix-blend-mode: multiply;
 }
+
+/* portrait tablets, large phones  */
+@media screen and (min-width: 600px) {
+
+}
+
+/* landscape tablets */
+@media screen and (min-width: 768px) {
+    h2 {
+        width: 80%;
+    }
+}
+
+/* laptops and desktops */
+@media screen and (min-width: 992px) {
+    h2 {
+        width: 50%;
+        padding-bottom: 2em;
+    }
+}
+
+/* large screens */
+@media screen and (min-width: 1200px) {
+    h2 {
+        width: 45%;
+    }
+  }
 
 </style>

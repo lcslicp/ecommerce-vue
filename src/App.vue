@@ -208,6 +208,7 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 /* for debugging only */
@@ -226,16 +227,11 @@ h1, h2, h3 {
 h4, .subheadline, li, p, button, input, textarea  {
   font-family: "Mulish", sans-serif;
 }
-h2 {
-  padding-bottom: 1em;
-}
+
 p {
-  font-size: 0.8em;
+  font-size: 0.9em;
   line-height: 1.5em;
   opacity: 0.7;
-}
-h1 {
-  width: 40%;
 }
 li {
   list-style: none;
@@ -254,11 +250,9 @@ header, .footer-upper {
 header {
   width: 90%;
 }
-header, .footer-upper, .hero-section, .about-section, .services-section, .icon-section, .img-section, .project-section, .CTA-section {
-  max-width: 1440px;
-}
+
 .hero-section, .about-section, .services-section, .icon-section, .img-section, .project-section, .CTA-section, .footer-upper, .scroll-div {
-  width: 75%;
+  width: 90%;
   margin: auto;
 }
 .about-section {
@@ -339,19 +333,72 @@ button {
   justify-content: center;
   align-items: flex-start;
   align-content: space-around;
+  min-width: 100%;
 }
 .subheadline {
   text-transform: uppercase;
   font-weight: 700;
   color: var(--gray);
-  font-size: 15px;
+    font-size: 17px;
 }
-.headline {
-  font-size: 3em;
+
+.section-headline {
+  font-size: 1.2em;
+}
+h2 {
+  padding-bottom: 0;
+}
+
+/* portrait tablets, large phones  */
+@media screen and (min-width: 600px) {
+  .hero-section, .about-section, .services-section, .icon-section, .img-section, .project-section, .CTA-section, .footer-upper, .scroll-div {
+    width: 90%;
+  }
+}
+
+/* landscape tablets */
+@media screen and (min-width: 768px) {
+  .hero-section, .about-section, .services-section, .icon-section, .img-section, .project-section, .CTA-section, .footer-upper, .scroll-div {
+    width: 75%;
+  }
+  .subheadline {
+        font-size: 18px;
+    }
+  p {
+  font-size: 0.9em;
+  line-height: 1.6em;
+}
+  }
+
+/* laptops and desktops */
+@media screen and (min-width: 992px) {
+  .hero-section, .about-section, .services-section, .icon-section, .img-section, .project-section, .CTA-section, .footer-upper, .scroll-div {
+    width: 85%;
+  }
+  .subheadline {
+    font-size: 20px;
+  }
+}
+
+/* large screens */
+@media screen and (min-width: 1200px) {
+  header, .footer-upper, .hero-section, .about-section, .services-section, .icon-section, .img-section, .project-section, .CTA-section {
+  max-width: 1440px;
+}
+
+.hero-section, .about-section, .services-section, .icon-section, .img-section, .project-section, .CTA-section, .footer-upper, .scroll-div {
+  width: 75%;
 }
 
 .section-headline {
   font-size: 1.3em;
 }
+
+h2 {
+  padding-bottom: 1em;
+}
+
+}
+
 
 </style>

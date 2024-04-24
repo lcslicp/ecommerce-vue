@@ -1,5 +1,5 @@
 <template>
-    <div class="flex-row container">
+    <div class="container">
         <img :src="imgSrc" :alt="altText">
         <div class="text">
             <h3>{{ imgCardTitle }}</h3>
@@ -60,25 +60,81 @@ export default defineComponent({
 <style scoped>
 .container {
     background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    height: 25em;
-    gap: 6em;
+    height: fit-content;
+    margin-top: 2.2em;
+    gap: 2em;
 }
 img {
-    width: 40%;
+    width: 100%;
     height: inherit;
     object-fit: cover;
 }
 h3 {
     font-size: 1.4em;
+    padding-bottom: 0.5em;
     margin: 0;
 }
 .text {
-    width: 40%;
+    width: 80%;
     height: fit-content;
 }
 button {
-    margin-top: 2.5em;
+    margin: 2.5em 0;
+    width: 100%;
+}
+
+/* portrait tablets, large phones  */
+@media screen and (min-width: 600px) {
+
+}
+
+/* landscape tablets */
+@media screen and (min-width: 768px) {
+    img {
+        height: 40em;
+    }
+    h3 {
+        font-size: 1.8em;
+        margin: 0;
+    }
+}
+
+/* laptops and desktops */
+@media screen and (min-width: 992px) {
+    .container {
+        flex-direction: row;
+        height: 30em;
+        gap: 4em;
+    }
+    h3 {
+        font-size: 1.4em;
+    }
+    img {
+        width: 40%;
+        height: inherit;
+        object-fit: cover;
+    }
+    .text {
+        width: 40%;
+        height: fit-content;
+    }
+    button {
+        width: inherit;
+        margin: 2em 0 0 0;
+    }
+}
+
+/* large screens */
+@media screen and (min-width: 1200px) {
+    .container {
+        gap: 6em;
+    }
+    .text {
+        width: 40%;
+    }
 }
 </style>

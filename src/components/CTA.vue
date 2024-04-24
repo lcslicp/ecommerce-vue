@@ -70,10 +70,12 @@ h2, form {
     z-index: 9;
 }
 h2 {
-    width: 40%;
+    width: 100%;
+    text-align: center;
+    padding-bottom: 0.5em;
 }
 form {
-    width: 30%;
+    width: 100%;
     gap: 0.5em;
 }
 input, textarea {
@@ -90,7 +92,7 @@ button {
     position: absolute;
     top: 0;
     right: 0;
-    width: 60%;
+    width: 0%;
     height: 100%;
     opacity: 0.5;
     filter: brightness(0.7);
@@ -102,5 +104,56 @@ button {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* portrait tablets, large phones  */
+@media screen and (min-width: 600px) {
+    .CTA-bg {
+        width: 45%;
+    }
+    h2 {
+        text-align: left;
+        width: 70%;
+    }
+    form {
+        width: 50%;
+    }
+    .CTA-bg {
+        width: 45%;
+    }
+    .CTA-section {
+        padding: 8em 0;
+    }
+}
+
+/* landscape tablets */
+@media screen and (min-width: 768px) {
+
+}
+
+/* laptops and desktops */
+@media screen and (min-width: 992px) {
+    h2 {
+        width: 50%;
+    }
+    form {
+        width: 35%;
+    }
+    .CTA-bg {
+        width: 60%;
+    }
+}
+
+/* large screens */
+@media screen and (min-width: 1200px) {
+    h2 {
+        width: 40%;
+    }
+    form {
+        width: 30%;
+    }
+    .CTA-bg {
+        width: 63%;
+    }
 }
 </style>
