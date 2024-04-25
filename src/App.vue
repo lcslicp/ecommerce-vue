@@ -2,14 +2,14 @@
   <section class="header-section">
     <Header :imgSrc="logo"/>
     <Hero :subheadline="heroSubheadline" :sectionTitle="heroTitle" :sectionText="heroText" :images="heroImages" />
-    <div class="scroll-div">
+    <div class="scroll-div flex-row">
       <button class="scroll"><svg width="8" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M5 8L0.669873 0.499999L9.33013 0.5L5 8Z"/>
 </svg>
 </button>
     </div>
   </section>
-  <section class="about-section">
+  <section class="about-section" id="about">
     <TextOnly :subheadline="textOnlySubheadline" :sectionTitle="textOnlySectionTitle" :sectionText="textOnlySectionText"/>
     <ImageCard
     altText="Minimalist living room sofa"
@@ -238,7 +238,6 @@ li {
 }
 a {
   text-decoration: none;
-  font-weight: 100;
 }
 a:hover {
   opacity: 0.5;
@@ -285,7 +284,7 @@ button {
 }
 
 .btn-light:hover, .scroll {
-  border: 1px solid var(--white);
+  border: 0.5px solid var(--white);
   color: var(--white);
 }
 .btn-light:hover svg path {
@@ -314,6 +313,10 @@ button {
 }
 .scroll:hover svg path {
   fill: var(--black);
+}
+.scroll {
+  margin: auto;
+  scale: 1.5;
 }
 .flex-col, .flex-row, button {
   display: flex;
@@ -358,16 +361,19 @@ h2 {
 
 /* landscape tablets */
 @media screen and (min-width: 768px) {
-  .hero-section, .about-section, .services-section, .icon-section, .img-section, .project-section, .CTA-section, .footer-upper, .scroll-div {
-    width: 75%;
-  }
-  .subheadline {
-        font-size: 18px;
+    .hero-section, .about-section, .services-section, .icon-section, .img-section, .project-section, .CTA-section, .footer-upper, .scroll-div {
+      width: 75%;
     }
-  p {
-  font-size: 0.9em;
-  line-height: 1.6em;
-}
+    .subheadline {
+      font-size: 18px;
+    }
+    p {
+      font-size: 0.9em;
+      line-height: 1.6em;
+    }
+    .scroll {
+      margin: 0;
+    }
   }
 
 /* laptops and desktops */
@@ -377,6 +383,9 @@ h2 {
   }
   .subheadline {
     font-size: 20px;
+  }
+  .scroll {
+    scale: 1;
   }
 }
 

@@ -94,16 +94,15 @@ h1 {
     padding-bottom: 0.3em;
 }
 .hero-section > p {
-  width: 60%;
+  width: 100%;
   margin: 0;
   padding-bottom: 1.2em;
 }
 h1, p, button {
     z-index: 3;
+    width: 100%;
+    text-align: center;
 }
-h1 {
-    width: 80%;
- } 
 .headline {
   font-size: 2.2em;
 }
@@ -129,6 +128,12 @@ h1 {
     .hero-section > p {
         width: 45%;
         padding-bottom: 1.3em;
+    }
+    h1, p {
+        text-align: left;
+    }
+    button {
+        width: fit-content;
     }
 }
 
