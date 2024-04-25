@@ -3,7 +3,7 @@
     <Header :imgSrc="logo"/>
     <Hero :subheadline="heroSubheadline" :sectionTitle="heroTitle" :sectionText="heroText" :images="heroImages" />
     <div class="scroll-div flex-row">
-      <button class="scroll"><svg width="8" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <button class="scroll" @click="scrollDown"><svg width="8" height="8" viewBox="0 0 10 8" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M5 8L0.669873 0.499999L9.33013 0.5L5 8Z"/>
 </svg>
 </button>
@@ -188,6 +188,17 @@ export default {
         },
       ],
       footerAlt: "Company Logo"
+    }
+  },
+  setup() {
+    const scrollDown = () => 
+    {
+      const aboutSection = document.getElementById('about');
+
+      aboutSection?.scrollIntoView({ behavior : 'smooth'});
+    }
+    return {
+      scrollDown
     }
   }
 
